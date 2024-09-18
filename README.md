@@ -1,2 +1,2 @@
-# TPS.POO.ILU
+# LesGaulois
 Répertoire des différents TPS POO de l'UE ILU
