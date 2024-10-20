@@ -5,7 +5,7 @@ public class Romain {
 	private String nom;
 	private int force;
 
-	public Romain(String nom, int force, int effetPotion) {
+	public Romain(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
 	}
@@ -13,9 +13,13 @@ public class Romain {
 	public String getNom() {
 		return nom;
 	}
-
+	
+	public int getForce() {
+		return force;
+	}
+	
 	public String prendreParole() {
-		return "Le gaulois " + nom + " : ";
+		return "Le romain " + nom + " : ";
 	}
 
 	public void parler(String texte) {
@@ -30,5 +34,18 @@ public class Romain {
 			parler("J'abandonne !");
 		}
 	}
-
+	
+	@Override
+	public String toString() {
+		return "Romain [nom=" + nom + ", force=" + force + "]";
+	}
+	
+	public static void main(String[] args) {
+		Romain jules = new Romain("Jules",10);
+		Gaulois asterix = new Gaulois("Asterix",8);
+		System.out.println(jules.getNom());
+		System.out.println(jules);
+		jules.parler("Bonjour !");
+		jules.recevoirCoup(asterix.getForce());
+	}
 }

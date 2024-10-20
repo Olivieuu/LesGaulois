@@ -6,6 +6,7 @@ public class Gaulois {
 	private int force;
 	private int effetPotion = 1;
 
+
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
@@ -13,6 +14,10 @@ public class Gaulois {
 
 	public String getNom() {
 		return nom;
+	}
+	
+	public int getForce() {
+		return force;
 	}
 
 	public String prendreParole() {
@@ -25,7 +30,12 @@ public class Gaulois {
 
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la figure de " + romain.getNom());
-		romain.recevoirCoup(force / 3);
+		romain.recevoirCoup((force / 3) * effetPotion);
+	}
+	
+	public void boirePotion(int forcePotion) {
+		effetPotion = forcePotion;
+		parler("Merci Druide, je sens que ma force est " + effetPotion + " fois décuplée !");
 	}
 
 	@Override
@@ -34,7 +44,13 @@ public class Gaulois {
 	}
 
 	public static void main(String[] args) {
-		// TODO Creer un main pour tester la classe Gaulois
-	}
+		Romain garde = new Romain("Garde",3);
+		Gaulois asterix = new Gaulois("Asterix",8);
+		Druide panoramix = new Druide("Panoramix",5,10);
 
+		panoramix.preparerPotion();
+		asterix.boirePotion(panoramix.forcePotion);
+		asterix.frapper(garde);
+	}
+	
 }
