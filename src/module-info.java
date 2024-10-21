@@ -4,5 +4,5 @@
 /**
  * 
  */
-module TPS.POO.ILU {
+module LesGaulois {
 }
