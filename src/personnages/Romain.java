@@ -59,7 +59,7 @@ public class Romain {
 		Equipement[] equipementEjecte = null;
 		forceCoup = resistanceEquipement(forceCoup);
 		force-= forceCoup;
-		if (force == 0) {
+		if (force >= 0) {
 			parler("Aïe");
 		}
 		else {
@@ -92,7 +92,7 @@ public class Romain {
 	
 	}
 	
-	private Equipement[] ejecterEquipement() {
+	public Equipement[] ejecterEquipement() {
 		Equipement[] equipementEjecte = new Equipement[nbEquipements];
 		System.out.println("L'équipement de " + nom + " s'envole sous la force du coup.");
 		int nbEquipementEjecte = 0;
