@@ -70,7 +70,7 @@ public class Romain {
 	}
 	
 	private int resistanceEquipement(int forceCoup) {
-  String texte;
+		String texte;
 		texte = "Ma force est de " + this.force + ", et la force du coup est de " + forceCoup;
 		int resistanceEquipement = 0;
 		if (nbEquipements != 0) {
@@ -88,6 +88,10 @@ public class Romain {
 		}
 		parler(texte);
 		forceCoup-= resistanceEquipement;
+		if (forceCoup <= 0) {
+			forceCoup = 0;
+			parler("Je suis plus fort que toi, tu ne peut pas gagner !");
+		}
 		return forceCoup;
 	
 	}
